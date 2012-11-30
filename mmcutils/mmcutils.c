@@ -367,7 +367,7 @@ format_ext3_device (const char *device) {
 int
 format_ext2_device (const char *device) {
     // Run mke2fs
-    char *const mke2fs[] = {MKE2FS_BIN, device, NULL};
+    char *const mke2fs[] = {MKE2FS_BIN, "-F", device, NULL};
     if(run_exec_process(mke2fs))
         return -1;
 
