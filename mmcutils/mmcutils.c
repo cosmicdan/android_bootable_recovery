@@ -372,7 +372,7 @@ format_ext2_device (const char *device) {
         return -1;
 
     // Run tune2fs
-    char *const tune2fs[] = {TUNE2FS_BIN, "-C", "1", "-m", "0", device, NULL};
+    char *const tune2fs[] = {TUNE2FS_BIN, "-C", "1", "-m", "0", "-f", device, NULL};
     if(run_exec_process(tune2fs))
         return -1;
 
